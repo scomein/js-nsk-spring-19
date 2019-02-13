@@ -1,0 +1,44 @@
+{
+  "name": "js-nsk-spring-19",
+  "version": "1.0.0",
+  "description": "TFS Frontend JS Homework",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run ava",
+    "lint": "npm run lint:es && npm run lint:css",
+    "lint:fix": "npm run lint:es:fix",
+    "lint:es": "eslint **/*.js",
+    "lint:es:fix": "eslint --fix **/*.js",
+    "lint:css": "stylelint **/*.css",
+    "ava": "ava tests/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Geschoss/js-nsk-spring-19.git"
+  },
+  "author": "Kolomnikov Pavel",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/Geschoss/js-nsk-spring-19/issues"
+  },
+  "homepage": "https://gitlab.com/Geschoss/js-nsk-spring-19/blob/master/README.md",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0",
+    "ava": "1.0.0-beta.8",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "dependencies": {
+    "delay": "^4.1.0"
+  }
+}
