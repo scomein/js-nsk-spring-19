@@ -14,5 +14,22 @@
  * @return {string}
  */
 export function rle(input) {
+  let result = '';
 
+  let i = 0;
+
+  while (i < input.length) {
+    const c = input[i];
+
+    let count = 1;
+
+    while (++i < input.length && input[i] === c) {
+      count++;
+    }
+    result += c;
+    if (count > 1) {
+      result += count;
+    }
+  }
+  return result;
 }

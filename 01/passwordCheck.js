@@ -20,5 +20,9 @@
  * @return {boolean}
  */
 export function passwordCheck(password) {
-
+  return password.length >= 10
+    && /\d/.test(password)
+    && /[a-z]/.test(password)
+    && /[A-Z]/.test(password)
+    && /[!?.,\\+\\-\\*=\\/]/.test(password);
 }
