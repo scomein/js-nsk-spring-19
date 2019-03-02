@@ -1,0 +1,18 @@
+div {
+    margin: 0px 5px;
+}
+
+div.game_container {
+    height: 300px;
+    width: 400px;
+    position: relative;
+    left: 20%;
+    top:20px;
+    border: 2px solid #1fba5b;
+}
+.inline {
+    display: inline-block;
+}
+p.inline {
+    width: 4em;
+}
