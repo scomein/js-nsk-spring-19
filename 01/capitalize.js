@@ -14,4 +14,16 @@
  * @param  {string} input строка с произвольным предложением.
  * @return {string}
  */
-export function capitalize(input) {}
+
+export function capitalize(input) {
+  let result = input;
+
+  const words = input.split(/[ .:;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
+
+  const wordsUpper = words.map((current, index, arr) => current.replace(/[\wа-яёА-ЯЁ]/, s => s.toUpperCase()));
+
+  for (let i = 0; i < words.length; i++) {
+    result = result.replace(words[i], wordsUpper[i]);
+  }
+  return result;
+}
