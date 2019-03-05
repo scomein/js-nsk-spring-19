@@ -14,4 +14,12 @@
  * @return {Function} функция с нужным контекстом
  */
 export function customBind(func, context, ...args) {
+  const targetFunc = func;
+  const boundContext = context;
+  const boundArgs = args;
+
+  return function(...args) {
+    args.forEach(t => boundArgs.push(t));
+    return targetFunc.apply(boundContext, boundArgs, args);
+  };
 }

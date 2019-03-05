@@ -12,17 +12,27 @@
  * @param {*[]}      input массив значений
  */
 export function reduceMap(fn, input) {
+  return input.reduce((acc, element, index) => {
+    acc[index] = fn(element);
+    return acc;
+  }, Array.from(input));
 }
 
 /**
- * Напишите функцию reduceFilter(fn, input), создающую новый
- * массив из значений массива input, удовлетворяющих
- * проверке fn.
- *
- * Для реализации функции используйте reduce.
- *
- * @param {Function} fn    функция-предикат
- * @param {*[]}      input массив значений
- */
+   * Напишите функцию reduceFilter(fn, input), создающую новый
+   * массив из значений массива input, удовлетворяющих
+   * проверке fn.
+   *
+   * Для реализации функции используйте reduce.
+   *
+   * @param {Function} fn    функция-предикат
+   * @param {*[]}      input массив значений
+   */
 export function reduceFilter(fn, input) {
+  return input.reduce((acc, element) => {
+    if (!fn(element)) {
+      acc.splice(acc.findIndex(t => t === element), 1);
+    }
+    return acc;
+  }, Array.from(input));
 }

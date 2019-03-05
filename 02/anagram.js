@@ -12,4 +12,19 @@
  * @return {boolean}
  */
 export function anagram(first, second) {
+  const secondCopy = second.toLocaleLowerCase().split('');
+
+  const firstCopy = first.toLocaleLowerCase().split('');
+
+  firstCopy.forEach(t => {
+    const index = secondCopy.indexOf(t);
+    const letter = secondCopy[index];
+
+    if (letter !== undefined && t.charCodeAt() === letter.charCodeAt()) {
+      secondCopy.splice(index, 1);
+    }
+    firstCopy.splice(1, 1);
+  });
+
+  return secondCopy.length === firstCopy.length;
 }

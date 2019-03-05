@@ -12,4 +12,10 @@
  * @param number
  */
 export function mergeNumbers(number) {
+  let v = number;
+
+  while (v > 10) {
+    v = v.toString(10).split('').map(t => Number(t)).reduce((acc, t) => acc + t);
+  }
+  return v;
 }

@@ -12,4 +12,16 @@
  * @return {Set<any>} массив уникальных значений, отсортированный по возрастанию
  */
 export function getUnique(input) {
+  const arr = input.sort((x, y) => x - y);
+  const countInArray = (array, t) => array.lastIndexOf(t) - array.indexOf(t) + 1;
+
+  arr.forEach(t => {
+    const count = countInArray(arr, t);
+
+    if (count > 1) {
+      arr.splice(arr.indexOf(t) + 1, count - 1);
+    }
+  });
+
+  return arr;
 }
