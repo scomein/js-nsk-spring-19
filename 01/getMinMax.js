@@ -17,5 +17,18 @@
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
 export function getMinMax(input) {
+  const numbers = input.split(/[ :;?!~,`"&|()<>{}\[\]\r\n/\\]+/)
+    .filter(str => str.length > 0)
+    // eslint-disable-next-line no-restricted-globals
+    .map(str => (isNaN(str) ? parseFloat(str).toString() : str))
+    // eslint-disable-next-line no-restricted-globals
+    .filter(str => !isNaN(str))
+    .map(str => Number(str))
+    .sort((a, b) => a - b);
 
+  return {
+    min: numbers.length > 0 ? numbers[0] : undefined,
+    max: numbers.length > 0 ? numbers[numbers.length - 1] : undefined
+  };
 }
+console.log(getMinMax('"To Infinity and beyond", - repeated Buzz Lightyear 4 times in a row'));
