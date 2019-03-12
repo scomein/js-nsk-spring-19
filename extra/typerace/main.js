@@ -29,7 +29,7 @@ const updateText = () => {
 
   getText.onload = function() {
     console.log(getText);
-    state.text = getText.responseText.substr(2, getText.responseText.length - 4);
+    state.text = unescape(JSON.parse(getText.responseText).text);
     textElem.textContent = state.text;
   };
   getText.open('GET', 'https://fish-text.ru/get', true);

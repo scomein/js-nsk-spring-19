@@ -7,6 +7,28 @@
 </head>
 <body>
     <div class="game_container">
+        <table class="main_table">
+            <tr class="info_tr">
+                <td class="fail_counter left">Ошибки: <div id="fails_view"><div class="circle"></div></div></td>
+                <td class="timer_cell right">Таймер: <div id="timer_value"></div></td>
+            </tr>
+            <tr> 
+                <td class="left"><p id="text_container"></p> </td>
+                <td class="right"><div class="menu">
+                    <table id="menu_table">
+                        <tr><td><button id="pause_btn" class="menu_btn">старт</button></td></tr>
+                        <tr><td><button id="save_btn" class="menu_btn">сохранить</button></td></tr>
+                        <tr><td><button id="properties_btn" class="menu_btn">настройки</button></td></tr>
+                    </table>
+                </div></td>
+            </tr>
+            <tr>
+                <td class="left"><input type="text" id="checked_text"></td>
+                <td class="right"></td>
+            </tr>
+        </table>
+
+<!--
         <div>
             <p class="inline">Ошибки:</p>
             <div class="inline" id="errors_container"> 1 2 3</div>
